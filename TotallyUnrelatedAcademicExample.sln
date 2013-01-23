@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TotallyUnRelatedAcademicExample", "TotallyUnRelatedAcademicExample\TotallyUnRelatedAcademicExample.vcxproj", "{A3BE3D7A-4A02-4649-90FB-BDCB8B419741}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "drm-check", "drm-check\drm-check.vcxproj", "{35E9D099-8E52-404D-94B4-404D206FD1AE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "important", "important\important.vcxproj", "{5965E283-C48C-4F39-A242-B517FB16F326}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hookdll", "hookdll\hookdll.vcxproj", "{2EB108DF-DFBF-452E-A166-CEDFDE0E14F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3BE3D7A-4A02-4649-90FB-BDCB8B419741}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3BE3D7A-4A02-4649-90FB-BDCB8B419741}.Debug|Win32.Build.0 = Debug|Win32
+		{A3BE3D7A-4A02-4649-90FB-BDCB8B419741}.Release|Win32.ActiveCfg = Release|Win32
+		{A3BE3D7A-4A02-4649-90FB-BDCB8B419741}.Release|Win32.Build.0 = Release|Win32
+		{35E9D099-8E52-404D-94B4-404D206FD1AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35E9D099-8E52-404D-94B4-404D206FD1AE}.Debug|Win32.Build.0 = Debug|Win32
+		{35E9D099-8E52-404D-94B4-404D206FD1AE}.Release|Win32.ActiveCfg = Release|Win32
+		{35E9D099-8E52-404D-94B4-404D206FD1AE}.Release|Win32.Build.0 = Release|Win32
+		{5965E283-C48C-4F39-A242-B517FB16F326}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5965E283-C48C-4F39-A242-B517FB16F326}.Debug|Win32.Build.0 = Debug|Win32
+		{5965E283-C48C-4F39-A242-B517FB16F326}.Release|Win32.ActiveCfg = Release|Win32
+		{5965E283-C48C-4F39-A242-B517FB16F326}.Release|Win32.Build.0 = Release|Win32
+		{2EB108DF-DFBF-452E-A166-CEDFDE0E14F9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2EB108DF-DFBF-452E-A166-CEDFDE0E14F9}.Debug|Win32.Build.0 = Debug|Win32
+		{2EB108DF-DFBF-452E-A166-CEDFDE0E14F9}.Release|Win32.ActiveCfg = Release|Win32
+		{2EB108DF-DFBF-452E-A166-CEDFDE0E14F9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
