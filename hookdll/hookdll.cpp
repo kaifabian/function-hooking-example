@@ -38,11 +38,14 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 		/* Now the EEEEEVIL part begins. */
 
 		HMODULE kernel32dll = GetModuleHandleA("kernel32");
+
+		printf("kernel32.dll resides at: %p\r\n", kernel32dll);
+
 		FARPROC getExitCodeProcessFunc = GetProcAddress(kernel32dll, "GetExitCodeProcess");
 		char *getExitCodeProcessAsm = ((char *) getExitCodeProcessFunc) - 5;
 		char *getExitCodeProcessOrig = ((char *) getExitCodeProcessFunc);
 
-		printf("The CreateProcessA stub from kernel32.dll resides at: %p\r\n", getExitCodeProcessFunc);
+		printf("The GetExitCodeProcess stub from kernel32.dll resides at: %p\r\n", getExitCodeProcessFunc);
 
 		DWORD dwback;
 
