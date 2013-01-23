@@ -49,18 +49,18 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 		// We need to make our part of the kernel32.dll writeable //
 		VirtualProtect(getExitCodeProcessAsm, 7, PAGE_READWRITE, &dwback);
 
-		// 0xEB is "short jump", 0xF9 is one's complement for -7
-		char shortJump7BytesBackwards[2] = {0xEB, 0xF9};
-		
-		for(int i = 0; i < 2; i++)
-			getExitCodeProcessOrig[i] = shortJump7BytesBackwards[i];
-		
 		// 0xE9 is "long jump", the address is calculated below (the difference between our hook function and the "original" one //
 		char longJumpToHookFunction[5] = {0xE9, 0x00, 0x00, 0x00, 0x00};
 		*(DWORD *) (longJumpToHookFunction + 1) = (DWORD) (((char *) &MyGetExitCodeProcess) - getExitCodeProcessOrig);
 
 		for(int i = 0; i < 5; i++)
 			getExitCodeProcessAsm[i] = longJumpToHookFunction[i];
+
+		// 0xEB is "short jump", 0xF9 is one's complement for -7
+		char shortJump7BytesBackwards[2] = {0xEB, 0xF9};
+		
+		for(int i = 0; i < 2; i++)
+			getExitCodeProcessOrig[i] = shortJump7BytesBackwards[i];
 		
 		// Now we restore the page protection //
 		VirtualProtect(getExitCodeProcessAsm, 7, dwback, &dwback);
