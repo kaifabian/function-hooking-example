@@ -62,8 +62,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 		// 0xEB is "short jump", 0xF9 is one's complement for -7
 		char shortJump7BytesBackwards[2] = {0xEB, 0xF9};
 		
-		for(int i = 0; i < 2; i++)
-			getExitCodeProcessOrig[i] = shortJump7BytesBackwards[i];
+		// Write it backwards, to avoid baaad crashes if getting
+		// scheduled whilst writing
+		*((short *) getExitCodeProcessOrig) = *((short *) shortJump7BytesBackwards);
 		
 		// Now we restore the page protection //
 		VirtualProtect(getExitCodeProcessAsm, 7, dwback, &dwback);
